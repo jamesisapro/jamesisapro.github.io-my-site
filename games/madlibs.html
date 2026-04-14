@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mad Libs!</title>
+    <link rel="icon" href="madlibslogo.ico" type="image/x-icon">
+</head>
+<body>
+<div class="container">
+    <h1>Mad Libs!</h1>
+    <p>Fill in the blanks and hit the button!</p>
+
+    <input type="text" id="word1" placeholder="Adjective (e.g., Goopy)">
+    <input type="text" id="word2" placeholder="Plural Noun (e.g., Chairs)">
+    <input type="text" id="word3" placeholder="Verb (past tense) (e.g., Jumped)">
+    <input type="text" id="word4" placeholder="Exclamation (e.g., Great Scott!)">
+    <input type="text" id="word5" placeholder="Place (e.g., The Moon)">
+    <input type="text" id="word6" placeholder="Verb (e.g., Fly)">
+    
+    <br><br>
+    <button onclick="generateMadLib()">Tell me my story!</button>
+
+    <div id="story-container">
+        <h3>Your Masterpiece:</h3>
+        <p id="story-text"></p>
+    </div>
+</div>
+
+<script>
+function generateMadLib() {
+    const adj = document.getElementById("word1").value;
+    const nouns = document.getElementById("word2").value;
+    const verbplural = document.getElementById("word3").value;
+    const exclaim = document.getElementById("word4").value;
+    const place = document.getElementById("word5").value;
+    const verb = document.getElementById("word6").value;
+
+    const story = `It was a ${adj} day when a group of smelly ${nouns} jumped out in front of me; I was very scared. Quickly, I ${verbplural} away, and exclaimed "${exclaim}". They chased after me, grabbed me, and dragged me back to ${place}. Oh well, I guess I will have to ${verb} here in ${place}!`;
+
+    const displayArea = document.getElementById("story-container");
+    document.getElementById("story-text").textContent = story;
+    displayArea.style.display = "block";
+}
+</script>
+</body>
+</html>
